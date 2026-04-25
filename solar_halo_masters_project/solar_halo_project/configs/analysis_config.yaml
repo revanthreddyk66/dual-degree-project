@@ -1,0 +1,86 @@
+## ═══════════════════════════════════════════════════════════
+## Solar ICS Halo Analysis Configuration
+## Based on Linden et al. (2026), arXiv:2505.04625
+## ═══════════════════════════════════════════════════════════
+
+analysis:
+  name: "solar_halo_1year"
+  description: "1-year Fermi-LAT solar ICS halo analysis"
+  start_date: "2008-08-04"
+  end_date:   "2009-08-04"        # 1-year subset
+  full_analysis_end: "2023-08-04" # For reference (15-yr paper)
+
+data:
+  ft1_directory:    "/path/to/fermi/data/ft1/"
+  ft2_directory:    "/path/to/fermi/data/ft2/"
+  ft1_name:         "L230804*.fits"
+  ft2_name:         "spacecraft.fits"
+  starttime:        239557417     # MET seconds — 2008-08-04 00:00:00
+  endtime:          271093417     # MET seconds — 2009-08-04 00:00:00
+  exposurestep:     3600          # 1-hour exposure cubes
+  eventclass:       512           # UltraClean
+  eventtype:        3             # All PSF classes
+  zenithangle:      90            # Maximum zenith angle [deg]
+  phibins:          60            # Phi bins for exposure (important for solar analysis!)
+  dcostheta:        0.025
+  binsz:            0.5           # Spatial bin size [deg]
+  energymin:        31.62         # MeV
+  energymax:        100000.0      # MeV (100 GeV)
+  energybins:       28            # Log-spaced (4 per decade × 7 decades)
+  filter:           "(DATA_QUAL>0) && (LAT_CONFIG==1)"
+  instrumentresponsefunction: "P8R3_ULTRACLEAN_V3"
+  psf_thetamax:     5.0           # PSF integration limit [deg]
+  psf_thetabins:    100
+  ics_infilelist:   "ics_models/"
+
+cuts:
+  suncut:                          60   # Mask Sun within 60° for background map [deg]
+  mooncut:                         20   # Mask Moon [deg]
+  latitudecut:                     30   # Galactic latitude cut [deg]
+  flarecut_name:                   "solar_flares.txt"
+  flarecut_fullbackground_name:    "background_flares.txt"
+  flarecut_fullbackground_starttime: 239557417
+  flarecut_fullbackground_endtime:   271093417
+  flarecut_filename:               "flarecut_times.npy"
+  flarecut_buffer:                 3600  # Buffer around flares [s]
+  source_angular_cut:              3.0   # Point source exclusion radius [deg]
+  source_cut_filename:             "4fgl_sources.txt"
+  source_mask_name:                "source_mask.fits"
+
+healpix:
+  nside: 512      # Full analysis: nside=512, ~0.115° per pixel
+  # nside: 64     # Quick test: nside=64, ~0.9° per pixel
+
+constants:
+  angular_size_of_sun_degrees: 0.26
+  rad2deg: 57.2957795
+
+## ── Solar Modulation Models ───────────────────────────────
+modulation:
+  phi_values_MV: [0, 100, 200, 300, 400, 475, 500, 600, 700, 800, 900, 1000]
+  best_fit_electron_MV: 475
+  best_fit_positron_MV: 0
+  heliosphere_boundary_AU: 100.0
+  default_model: "I"  # Options: "I", "II", "III"
+  alpha_model_III: 0.0  # Energy-dependence index (best-fit: 0.0)
+
+## ── Analysis Region ──────────────────────────────────────
+roi:
+  max_angle_deg: 45       # Maximum angular distance from Sun
+  min_angle_deg: 0.5      # Minimum (avoid solar disk contamination)
+  background_exclusion_deg: 60  # Region excluded from background calculation
+
+## ── Output ───────────────────────────────────────────────
+output:
+  directory: "results/"
+  save_maps:      true
+  save_spectra:   true
+  save_likelihoods: true
+  plot_format:    "pdf"   # pdf, png, or both
+
+## ── Computational ─────────────────────────────────────────
+compute:
+  mpicores: 16
+  wkdir: "/scratch/solar_halo/"
+  ramdir: "/dev/shm/solar_halo/"
+  chunk_size_hours: 1      # Hours per exposure cube

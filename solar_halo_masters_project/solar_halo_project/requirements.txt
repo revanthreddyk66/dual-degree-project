@@ -1,0 +1,8 @@
+numpy>=1.24
+scipy>=1.10
+matplotlib>=3.7
+astropy>=5.3
+healpy>=1.16
+iminuit>=2.21
+PyYAML>=6.0
+sunpy>=5.0
