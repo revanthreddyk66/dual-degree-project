@@ -1,8 +1,7 @@
-# Solar ICS Halo — Fermi-LAT Analysis
+# Fermi-LAT Analysis
 ### Master's Project Repository
 
-> **Based on:** *"First Observations of Solar Halo Gamma Rays Over a Full Solar Cycle"*  
-> Linden et al. (2026) — [arXiv:2505.04625](https://arxiv.org/abs/2505.04625)
+
 
 ---
 
@@ -98,20 +97,6 @@ $$\frac{dN}{dE\,d\Omega} \propto \theta_s^{-1}$$
 ---
 
 
-### Installation
-
-```bash
-git clone https://github.com/YOUR_USERNAME/solar_halo_masters
-cd solar_halo_masters
-pip install -r requirements.txt
-```
-
-### Run theory plots (no Fermi data needed)
-
-```bash
-python plots/plot_fig3_spectral_bins.py --theory-only
-python plots/plot_fig4_radial_bins.py --theory-only
-```
 
 ### Run with 1-year Fermi data
 
