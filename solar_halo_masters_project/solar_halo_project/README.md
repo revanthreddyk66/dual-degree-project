@@ -14,7 +14,7 @@ The **solar ICS halo** arises when ambient cosmic-ray electrons and positrons (e
 
 ---
 
-## 🗂️ Repository Structure
+##  Repository Structure
 
 ```
 solar_halo_project/
@@ -37,15 +37,9 @@ solar_halo_project/
 ├── models/                          ← Pre-computed model grids
 │   └── README.md
 │
-├── plots/                           ← Reproduced paper figures
-│   ├── plot_fig1_spectrum_morphology.py   ← Figure 1: Main result
-│   ├── plot_fig2_helioprojective_maps.py  ← Figure 2: Data/model maps
-│   ├── plot_fig3_spectral_bins.py         ← Figure 3: Spectra in radial bins
-│   ├── plot_fig4_radial_bins.py           ← Figure 4: Radial profiles in energy bins
-│   └── plot_all.py                        ← Run all plots at once
 │
 ├── notebooks/
-│   └── 01_solar_halo_tutorial.ipynb ← Step-by-step tutorial notebook
+│   └── 01_solar_halo_tutorial.ipynb 
 │
 ├── data/
 │   └── README.md                    ← Instructions for downloading Fermi-LAT data
@@ -54,13 +48,10 @@ solar_halo_project/
 │   ├── physics_derivations.md       ← Full mathematical derivations
 │   └── pipeline_overview.md         ← Analysis pipeline explanation
 │
-└── tests/
-    └── test_models.py               ← Unit tests for physics modules
 ```
 
 ---
 
-## ⚛️ Core Physics
 
 ### 1. Inverse-Compton Scattering (ICS)
 
@@ -106,7 +97,6 @@ $$\frac{dN}{dE\,d\Omega} \propto \theta_s^{-1}$$
 
 ---
 
-## 🚀 Quick Start
 
 ### Installation
 
@@ -147,29 +137,6 @@ See `requirements.txt`. Key packages:
 
 ---
 
-## 📚 Key References
 
-1. **Linden et al. (2026)** — Main paper this code is based on: [arXiv:2505.04625](https://arxiv.org/abs/2505.04625)
-2. **Gleeson & Axford (1968)** — Force-field solar modulation: ApJ 154, 1011
-3. **Bisschoff, Potgieter & Aslam (2019)** — Local Interstellar Spectra: ApJ 878, 59
-4. **Orlando & Strong (2008)** — ICS solar halo theoretical framework: A&A 480, 847
-5. **Zhou et al. (2017)** — Solar disk + halo modeling: PRD 96, 023015
 
----
 
-## 📝 Citation
-
-If you use this code, please cite:
-```bibtex
-@article{Linden2026,
-  author  = {Linden, Tim and others},
-  title   = {First Observations of Solar Halo Gamma Rays Over a Full Solar Cycle},
-  journal = {arXiv},
-  year    = {2026},
-  eprint  = {2505.04625}
-}
-```
-
----
-
-*Master's Project — Solar ICS Halo Analysis*
