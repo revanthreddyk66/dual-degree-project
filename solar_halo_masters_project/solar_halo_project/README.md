@@ -1,4 +1,4 @@
-# ☀️ Solar ICS Halo — Fermi-LAT Analysis
+# Solar ICS Halo — Fermi-LAT Analysis
 ### Master's Project Repository
 
 > **Based on:** *"First Observations of Solar Halo Gamma Rays Over a Full Solar Cycle"*  
@@ -6,7 +6,7 @@
 
 ---
 
-## 📋 Overview
+## Overview
 
 This repository contains a full, self-contained implementation of the solar Inverse-Compton Scattering (ICS) halo analysis using Fermi-LAT data. It is structured for a **1-year subset analysis** as a master's project, with all physics models, theoretical predictions, and plot-reproduction tools clearly documented.
 
@@ -125,7 +125,7 @@ python plots/plot_all.py --config configs/analysis_config.yaml
 
 ---
 
-## 📦 Dependencies
+## Dependencies
 
 See `requirements.txt`. Key packages:
 - `numpy`, `scipy`, `matplotlib` — numerical computing & plotting
