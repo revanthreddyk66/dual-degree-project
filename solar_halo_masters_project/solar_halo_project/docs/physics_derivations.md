@@ -208,15 +208,4 @@ Evidence for **different modulation potentials** along (Tx) vs across (Ty) the e
 
 ---
 
-## 9. Relationship to Other Solar γ-Ray Observations
 
-| Source | Energy | Mechanism | Status |
-|--------|--------|-----------|--------|
-| Solar disk | MeV–10 GeV | Hadronic (p+p→π⁰→γγ) on solar surface | Known since 2011 |
-| Solar halo (ICS) | 32 MeV–100 GeV | ICS of e⁺e⁻ off sunlight | This paper (2026) |
-| Solar flares | Up to 4 GeV | Accelerated particles in flare events | Well studied |
-| Solar energetic particles | keV–GeV | Magnetically accelerated | Separate category |
-
----
-
-*Last updated: 2026 — Solar ICS Halo Master's Project*
