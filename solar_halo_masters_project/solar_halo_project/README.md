@@ -13,45 +13,6 @@ The **solar ICS halo** arises when ambient cosmic-ray electrons and positrons (e
 
 ---
 
-##  Repository Structure
-
-```
-solar_halo_project/
-│
-├── README.md                        ← This file
-├── requirements.txt                 ← Python dependencies
-├── configs/
-│   └── analysis_config.yaml         ← All tunable parameters
-│
-├── src/                             ← Core source code
-│   ├── __init__.py
-│   ├── solar_modulation.py          ← Force-field solar modulation models (I, II, III)
-│   ├── ics_emissivity.py            ← ICS γ-ray emissivity calculations
-│   ├── halo_model.py                ← Full solar halo model (spectrum + morphology)
-│   ├── local_interstellar_spectrum.py  ← e+/e- LIS from Bisschoff+2019
-│   ├── background_model.py          ← Data-driven astrophysical background
-│   ├── statistical_fitting.py       ← Log-likelihood fitting with iminuit
-│   └── utils.py                     ← Coordinate transforms, helper functions
-│
-├── models/                          ← Pre-computed model grids
-│   └── README.md
-│
-│
-├── notebooks/
-│   └── 01_solar_halo_tutorial.ipynb 
-│
-├── data/
-│   └── README.md                    ← Instructions for downloading Fermi-LAT data
-│
-├── docs/
-│   ├── physics_derivations.md       ← Full mathematical derivations
-│   └── pipeline_overview.md         ← Analysis pipeline explanation
-│
-```
-
----
-
-
 ### 1. Inverse-Compton Scattering (ICS)
 
 The γ-ray emissivity from ICS is:
